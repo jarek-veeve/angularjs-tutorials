@@ -1,0 +1,16 @@
+   <div class="container2">
+        <h3>Template2</h3><br>
+        <input type="text" ng-model="filter.item2" />
+        <ul>
+            <li ng-repeat="it in items | filter:filter.item2"> {{ it.name }} - {{ it.category }} </li>
+        </ul>
+        
+        <br>
+            item name: <input type="text" ng-model="newItem.name" />
+        <br>
+            item category: <input type="text" ng-model="newItem.category" />
+        <br>    
+            <input type="button" ng-click="addItem()" value="Add item"/>
+        <br>
+        <a href="#/template1">Template 1</a>
+    </div>
