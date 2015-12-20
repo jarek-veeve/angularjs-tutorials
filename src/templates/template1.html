@@ -1,0 +1,16 @@
+    <div class="container">
+        <h3>Template 1</h3>
+        <input type="text" ng-model="filter.name" />
+        <ul>
+            <li ng-repeat="cust in customers | filter:filter.name | orderBy:'city'"> {{ cust.name | lowercase }} - {{ cust.city  | uppercase }}</li>
+        </ul>
+        <br>
+            cust name: <input type="text" ng-model="newCustomer.name" />
+        <br>
+            cust city: <input type="text" ng-model="newCustomer.city" />
+        <br>    
+            <input type="button" ng-click="addCustomer()" value="Add customer"/>
+        <br>    
+        <a href="#/template2">Template 2</a>
+    </div>
+    
