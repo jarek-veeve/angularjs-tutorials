@@ -8,7 +8,7 @@
 <body>
     <h2>Main</h2>
     
-   <!-- <div class="container" ng-controller="SimpleController">
+    <!--<div class="container" ng-controller="SimpleController">
         <h3>Template 1</h3>
         <input type="text" ng-model="filter.name" />
         <ul>
@@ -45,7 +45,7 @@
 
     <!-- Placeholder for views -->
     <div>
-        <div ng-view></div>    
+        <div ng-view=""></div>    
     </div>
     
     
@@ -54,12 +54,14 @@
     <script>
         var module = angular.module('myFirstApp', ['ngRoute'])
  
-            module.controller ('SimpleController', function($scope) {
-            $scope.customers = [
-                {name: "Jan", city: "London"},
-                {name: "Janek", city: "London"},
-                {name: "Jarek", city: "London"},
-            ];
+            module.controller ('SimpleController', function($scope, simpleFactory) {
+
+            $scope.customers = [];
+            
+            init();            
+            function init(){
+                $scope.customers = simpleFactory.getCustomers();
+            }
             
             $scope.addCustomer = function() {
                 $scope.customers.push({name: $scope.newCustomer.name, 
@@ -79,10 +81,30 @@
                                    category: $scope.newItem.category});
             };
             });
-
+            
+            /* Factory */
+            module.factory('simpleFactory', function(){
+                var customers = [
+                    {name: "Jan", city: "London"},
+                    {name: "Janek", city: "London"},
+                    {name: "Jarek", city: "London"},
+                ];
+                
+                var factory = {};
+                factory.getCustomers = function (){
+                    return customers;
+                };
+                
+                factory.postCustmers = function (customer) {
+                    
+                };
+                
+                return factory;
+            });
+            
             module.config(function ($routeProvider) {
                $routeProvider
-                    .when ('/',
+                    .when ('/template1',
                     {
                         controller:'SimpleController',
                         templateUrl:'templates/template1.html'
@@ -92,7 +114,7 @@
                         controller: 'ItemController',
                         templateUrl: 'templates/template2.html'    
                     })
-                    .otherwise ({ redirectTo: '/' }); 
+                    .otherwise ({ redirectTo: '/template1' }); 
             });            
             
     </script>
