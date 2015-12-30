@@ -2,16 +2,25 @@ var myModule = angular.module('myModule', []);
 
     myModule.value('moduleMsg', 'Hello from myModule.');
 
-    myModule.controller('FirstController', ['$scope', 'moduleMsg', function ($scope, msg) {
-        $scope.message = msg;
+    myModule.controller('FirstController', ['$scope', 'moduleMsg', function ($scope, moduleMsg) {
+        $scope.message = moduleMsg;
 }]);
 
-/**** Second module which injects functionality from myModule ****/
+/**** Third model - exercise ****/
+var myExercise = angular.module('myExercise', []);
 
-var myApp = angular.module('myApp', ['myModule']);
+    myExercise.value('thirdMsg', 'This is a message from third controller.')
+
+    myExercise.controller('ThirdController', ['$scope', 'thirdMsg', function($scope, thirdMsg){
+        $scope.message = thirdMsg;
+    }]);
+
+/**** Second module which injects functionality from myModule ****/
+var myApp = angular.module('myApp', ['myModule', 'myExercise']);
     
     myApp.value('appMsg', 'Hello from myApp.');
     
-    myApp.controller('SecondController', ['$scope', 'appMsg', function ($scope, msg){
-        $scope.message = msg;
+    myApp.controller('SecondController', ['$scope', 'appMsg', function ($scope, appMsg){
+        $scope.message = appMsg;
     }]);
+    
