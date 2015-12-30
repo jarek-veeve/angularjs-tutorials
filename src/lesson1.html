@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="firstTutorial">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <div ng-controller="TutorialController">
+        <input type="text" ng-model="first" />
+        <input type="text" ng-model="last" />
+        <button ng-click="updateMessage()">Message</button>
+        <button ng-click="resetMessage()">Reset</button>
+        <button ng-click="clicked($event)">Click me</button>
+        <hr />
+        <br />
+        <h1>{{ heading + message }}</h1>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson1.js"></script>
+       
+</body>
+</html>

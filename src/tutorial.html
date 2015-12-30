@@ -8,7 +8,7 @@
 <body>
     <h2>Main</h2>
     
-   <!-- <div class="container" ng-controller="SimpleController">
+    <!--<div class="container" ng-controller="SimpleController">
         <h3>Template 1</h3>
         <input type="text" ng-model="filter.name" />
         <ul>
@@ -45,57 +45,13 @@
 
     <!-- Placeholder for views -->
     <div>
-        <div ng-view></div>    
+        <div ng-view=""></div>    
     </div>
     
     
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/angular-route.min.js"></script>
-    <script>
-        var module = angular.module('myFirstApp', ['ngRoute'])
- 
-            module.controller ('SimpleController', function($scope) {
-            $scope.customers = [
-                {name: "Jan", city: "London"},
-                {name: "Janek", city: "London"},
-                {name: "Jarek", city: "London"},
-            ];
-            
-            $scope.addCustomer = function() {
-                $scope.customers.push({name: $scope.newCustomer.name, 
-                                       city: $scope.newCustomer.city});
-            };
-            });
-            
-            module.controller('ItemController', function($scope) {
-                $scope.items = [
-                    {name: 'cake', category: 'baking'},
-                    {name: 'pankcake', category: 'cooking'},
-                    {name: 'ribs', category: 'roasting'},
-                ];
-                
-                $scope.addItem = function() {
-                $scope.items.push({name: $scope.newItem.name,
-                                   category: $scope.newItem.category});
-            };
-            });
-
-            module.config(function ($routeProvider) {
-               $routeProvider
-                    .when ('/',
-                    {
-                        controller:'SimpleController',
-                        templateUrl:'templates/template1.html'
-                    })
-                    .when ('/template2',
-                    {
-                        controller: 'ItemController',
-                        templateUrl: 'templates/template2.html'    
-                    })
-                    .otherwise ({ redirectTo: '/' }); 
-            });            
-            
-    </script>
-    
+    <script src="scripts/myFirstApp.js"></script>
+       
 </body>
 </html>
