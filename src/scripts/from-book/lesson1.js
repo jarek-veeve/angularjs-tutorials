@@ -17,10 +17,9 @@ var firstTutorial = angular.module('firstTutorial', [])
             $scope.last = "Last";
         }
         
-        $scope.clicked = function(event) {
+        $scope.clicked = function() {
             $scope.first = "First2222";
             
         }
     
     });
-
