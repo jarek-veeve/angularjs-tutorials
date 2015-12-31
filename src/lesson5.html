@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 5 - Implementing a basic controller</p>
+    <div ng-controller="ModuleController">
+        Change value:<input type="number" ng-model="change"/>
+        <hr />
+        <br />
+        <p>Starting value: {{ start }}</p>
+        <p>Current value: {{ current }}</p>
+        <br />
+        <button ng-click="inc()">+</button>
+        <button ng-click="dec()">-</button>
+        <button ng-click="reset()">reset</button>        
+        <hr />
+        <br />
+        <p>Difference value: {{ difference }}</p>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson5.js"></script>
+       
+</body>
+</html>
