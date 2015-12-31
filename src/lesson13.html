@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 12 - Creating and implementing custom filter</p>
+    <div ng-controller="FilterController">        
+        {{ phrase | censor:censorText }}<br />
+        {{ additionalText | censor: '*****' }}
+        <br />
+        {{ 'This is some stupid text dick friend you fuck' | censor:'swearings' }} <hr />
+        <p ng-click="filterText()"> {{ txt }}</p>     
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson13.js"></script>
+       
+</body>
+</html>

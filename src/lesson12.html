@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 11 - Using filters to implement ordering and filtering</p>
+    <div ng-controller="FilterController">        
+        <input type="text" ng-model="filterString" />
+        <input type="button" ng-click="setFilter()" value="Filter" /><hr />
+        <table>
+            <tr>
+                <th ng-click="setSort('make')">Make</th>
+                <th ng-click="setSort('model')">Model</th>
+                <th ng-click="setSort('capacity')">Capacity</th>
+            </tr>
+            <tr ng-repeat="plane in filteredPlanes | orderBy:column:reverse">
+                <td>{{ plane.make }}</td>
+                <td>{{ plane.model }}</td>
+                <td>{{ plane.capacity }}</td>    
+            </tr>    
+        </table>   
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson12.js"></script>
+       
+</body>
+</html>

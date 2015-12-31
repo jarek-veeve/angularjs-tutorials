@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 10 - Using JavaScript in AngularJS expressions</p>
+    <div ng-controller="ExJavaController">        
+        {{ arrayOne }} <hr />
+        {{ arrayTwo }} <hr />
+        
+        <a href="" ng-click="arrayOne.push(Math.floor(Math.random()*100 + 1))">
+            Click to append value to the array</a>
+        <a href="" ng-click="arrayTwo.push(arrayOne.shift())">
+            Click to remove first value from the array</a><hr />  
+        {{ arrayOne.length }}<hr />
+        {{ Math.cos(arrayTwo.length) }}<hr />
+        
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson10.js"></script>
+       
+</body>
+</html>

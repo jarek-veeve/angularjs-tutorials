@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 11 - Using filters to control how data is rendered</p>
+    <div ng-controller="FilterController">        
+        Number: {{ 123.345678 | number:3}}<hr />
+        Currency: {{ 123.345678 | currency:'£' }}<hr />
+        Date: {{ currentDate | date:'yyyy-MMMM-EEE HH:mm:ss' }}<hr />
+        JSON: {{ JsonObject | json}}<hr />
+        Limit array: {{ ObjectArray | limitTo:2 }}<hr />
+        Limit string: {{ stringValue | limitTo: 10 }}<hr />
+        Uppercase: {{ stringValue | uppercase | limitTo: 11 }}<hr />
+        Lowercase: {{ stringValue | lowercase | limitTo: 12 }}<hr />    
+        Exercise text: {{ myScopeText }}<hr />
+        Exercise number: {{ myScopeNumber | currency:'PLN'}}        
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson11.js"></script>
+       
+</body>
+</html>
