@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+</head>
+<body>
+    <p>Lesson 6 - Looking at scope values in AngularJS template</p>
+    <div ng-controller="CalcController">
+        <span>1st val: </span><input type="number" ng-model="valueA" />    
+        <span>2nd val: </span><input type="number" ng-model="valueB"/>
+        <hr />
+       <p>Expression: {{ valueA }} + {{ valueB }}</p> 
+       <p>Live calc: {{ valueA + valueB }}</p>
+       <button ng-click="addition(valueA, valueB)">Click to add {{valueA}} & {{valueB}}</button>
+       <hr />
+       <p>Expression: {{ valueA }} + {{ valueB }}</p>
+       <p>Live multi: {{ valueA * valueB }} </p>
+       <button ng-click="multiplication(valueA, valueB)">Click to multiple {{valueA}} & {{valueB}}</button>
+       <p>Value C: {{ valueC }}</p>
+       
+       
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson6.js"></script>
+       
+</body>
+</html>
