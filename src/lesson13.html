@@ -12,7 +12,10 @@
         {{ additionalText | censor: '*****' }}
         <br />
         {{ 'This is some stupid text dick friend you fuck' | censor:'swearings' }} <hr />
-        <p ng-click="filterText()"> {{ txt }}</p>     
+        <p ng-click="filterText()"> {{ txt }}</p>   
+        <hr />
+        <input type="text" ng-model="freeText" />
+        {{ freeText | censor: '*****' }}  
     </div>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
     <script src="scripts/angular.min.js"></script>

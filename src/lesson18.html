@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+
+</head>
+<body>
+    <p>Lesson 18 - handling keyboard and mouse events on AngularJS elements</p>
+    <div ng-controller="MyController">
+        <input type="text" 
+            ng-keydown="keyState = 'Pressed'"
+            ng-keyup="keyPressed($event)" /> <hr />
+        Keyboard state: {{ keyState }} <br />
+        Last key: {{ keyInfo | json }} <br />
+        Stored String: {{ storedStrings }}<br />
+        Recorded key strokes: {{ keyStrokes }}  
+    </div>
+    <hr />
+    <p>Mouse events</p>
+    <div ng-controller="MouseEventsController">
+        <img src="images/angularjs.png"
+            ng-mouseenter="mouseState='Entered'"
+            ng-mouseleave="mouseState='Left'"
+            ng-mousedown="mouseState='Down'"
+            ng-mouseclick="mouseState='Clicked'"
+            ng-mouseup="mouseState='Up'"
+            ng-click="mouseClick($event)"
+            ng-mousemove="mouseMove($event)"></img><hr/>
+            Mouse state: {{ mouseState }} <br/>
+            Mouse Position info: {{ mouseInfo | json}}<br/>
+            Last click info: {{ lastClickInfo | json }}<br />
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson18.js"></script>
+       
+</body>
+</html>

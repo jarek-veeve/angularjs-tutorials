@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    <style>
+        .odd{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>Lesson 16 - using AngularJS directives to dynamically interact with page elements</p>
+    <div ng-controller="DynamicController">        
+        <label ng-repeat="color in colours">
+            {{color}}
+            <input type="radio" ng-model="myStyle['background-color']"
+            ng-value="color" id="{{color}}" name="mColor"/>
+        </label>
+        <hr />
+        <span class="rect" ng-style="myStyle">{{myStyle['background-color']}}</span><hr/>
+        <li ng-repeat="day in days">
+            <span ng-class-odd="'odd'">{{day}}</span>
+        </li>
+        <hr />
+        Show Message: <input type="checkbox" ng-model="checked" />
+        <p ng-if="checked" ng-bind="msg"></p>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson16.js"></script>
+       
+</body>
+</html>

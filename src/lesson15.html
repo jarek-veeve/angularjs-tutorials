@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+
+</head>
+<body>
+    <p>Lesson 15 - using directive to bind form elements to scope</p>
+    <div ng-controller="FormController">        
+        <input type="text" ng-model="someText"> {{ someText | uppercase}} <hr />
+        <input type="checkbox" ng-model="checkBox"
+            ng-true-value="'Checked'" ng-false-value="'Unchecked'">
+            Checkbox: {{ checkBox }}<hr />
+            
+        <input type="radio" ng-model="cameraName" value="Canon">Canon<br/>
+        <input type="radio" ng-model="cameraName" value="Nikon">Nikon<br/>
+        {{ cameraName }}
+        
+        <select ng-model="camera" ng-options="c.name group by c.price for c in cameras"></select>
+        {{camera.price | currency:'£' }}
+        
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson15.js"></script>
+       
+</body>
+</html>

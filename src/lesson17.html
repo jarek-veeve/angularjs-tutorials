@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+
+</head>
+<body>
+    <p>Lesson 17 - using focus and blur event</p>
+    <div ng-controller="MyController">
+        Input1:        
+        <input type="text" ng-focus="focusGained($event,'input1')"
+            ng-blur="focusLost($event, 'input1')"/><br/>
+        Input2:
+        <input type="text" ng-focus="focusGained($event,'input2')"
+            ng-blur="focusLost($event, 'input2')"/><br/>
+            {{ inputData }}
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson17.js"></script>
+       
+</body>
+</html>
