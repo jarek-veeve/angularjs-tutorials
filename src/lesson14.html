@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    
+    <style>
+        .small{
+            font-size: 10pt;
+            background-color: blue;
+            
+        }
+        
+        .large{
+            font-size: 20pt;
+            background-color: red;
+        }
+        
+        a {
+            color:green;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .template {
+            width: 100%;
+            top:0;
+            left: 0;
+            height: 10vh;
+            background-color: yellowgreen;
+            position: absolute;
+        }
+    </style>
+    
+</head>
+<body>
+    <p>Lesson 14 - using ngInclude to dynamically change content</p>
+    <div ng-controller="DynamicController">        
+        <a ng-click="titleBar='templates/largeTitle.html'">Large title</a>
+        <a ng-click="titleBar='templates/smallTitle.html'">Small title</a>           
+        <a ng-click="titleBar=''">Hide title</a>
+        <div ng-include="titleBar" class="template"></div>
+    </div>
+    
+
+    
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson14.js"></script>
+       
+</body>
+</html>
