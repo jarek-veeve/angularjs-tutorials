@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    <style>
+        .titleBar {
+            background-color: yellow;
+            color:blue;
+            font-size: 14pt;
+            text-align: center;
+            border-bottom: 1pt black solid;
+            display: block;
+        }
+        .footer {
+            background-color: pink;
+            color: brown;
+            font-size: 12pt;
+            text-align: center;
+            display: block;
+            border-top: 1pt solid brown;
+        }
+        mybox {
+            border: 2pt solid black;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Lesson 19 - implementing custom directives</p>
+    <div ng-controller="MyController">
+        <mybox title="Simple Text" bwidth="200px" bheight="100px">
+            Using angularJS to build box around text
+        </mybox>
+        
+        <mybox title="Paragraph" bwidth="100px" bheight="100px">
+            Paragraph
+        </mybox>
+        
+        <mybox title="List" bwidth="500px" bheight="100px">
+            <ul>
+                <li>using AngularJS</li>
+                <li>Custom directive</li>
+                <li>first try</li>
+            </ul>
+        </mybox>             
+        
+        <mybox title="Image" bwidth="300px" bheight="100px">
+            <img src="images/angularjs.png" width="300px"/>        
+        </mybox>                  
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson19.js"></script>
+       
+</body>
+</html>

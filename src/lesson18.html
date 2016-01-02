@@ -23,9 +23,8 @@
             ng-mouseenter="mouseState='Entered'"
             ng-mouseleave="mouseState='Left'"
             ng-mousedown="mouseState='Down'"
-            ng-mouseclick="mouseState='Clicked'"
             ng-mouseup="mouseState='Up'"
-            ng-click="mouseClick($event)"
+            ng-click="mouseClick($event); mouseState='Clicked'"
             ng-mousemove="mouseMove($event)"></img><hr/>
             Mouse state: {{ mouseState }} <br/>
             Mouse Position info: {{ mouseInfo | json}}<br/>
