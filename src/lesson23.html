@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    <style>
+        span {
+            padding: 3px;
+            border: 2pt solid black;
+            cursor: pointer;
+            width: 100px;
+            display: inline-block;
+            color: white;
+            background-color: darkblue;
+        }
+        label {
+            padding: 2px;
+            margin: 5px 10px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .lList {
+            vertical-align: top;
+            display: inline-block;
+            width: 130px;
+        }
+        .cInfo {
+            display: inline-block;
+            width: 180px;
+            border: 1pt blue solid;
+        }
+    </style>
+</head>
+<body>
+    <p>Lesson 23 - implementing custom events in nested controllers</p>
+
+    <div ng-controller="CharactersController">
+        <div class="lList">
+            <span ng-repeat="name in names track by $index"
+                  ng-click="changeName()">{{ name }}</span>
+        </div>
+        
+        <div class="cInfo">
+            <div ng-controller="CharacterController">
+                <label>Name:</label> {{ currentName }} <br />
+                <label>Age:</label> {{ currentInfo.age }} <br />
+                <label>Sex:</label> {{ currentInfo.sex }} <br />
+                <span ng-click="deleteChar()">Delete</span>
+                <span ng-click="addChar()">Add</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson23.js"></script>
+       
+</body>
+</html>

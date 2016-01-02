@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Tutorial</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lesson 20 - implementing event handlers in a custom directives</p>
+    
+    <img src="images/view.jpg" zoomit></img>
+    <img src="images/view.jpg" fadeit></img>
+    <img src="images/view.jpg" zoomit fadeit></img>   
+    <hr />
+    <p>Drag up to fade out and down to fade in</p>
+    <p>Drag left to zoom out and right to zoom in</p>    
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"/"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/from-book/lesson20.js"></script>
+       
+</body>
+</html>
